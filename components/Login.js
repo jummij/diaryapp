@@ -9,6 +9,7 @@ import {
   TouchableOpacity,
   View,
   Image,
+  Alert,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
@@ -25,17 +26,21 @@ export default function Login({ navigation }) {
   }, []);
 
   const handleLogin = () => {
-    signInWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        // Signed in
-        const user = userCredential.user;
-        navigation.navigate("Home");
-      })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        // ...
-      });
+    if ((email, password)) {
+      signInWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+          // Signed in
+          const user = userCredential.user;
+          navigation.navigate("Home");
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          // ...
+        });
+    } else {
+      Alert.alert("Alert", "Inputs cannot be empty");
+    }
   };
 
   const registerButton = () => {
@@ -95,19 +100,18 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     paddingTop: 10,
-    backgroundColor: "white",
+    backgroundColor: "#fcf0f3",
   },
   inputContainer: {
     width: "80%",
+    marginTop: 20,
   },
   input: {
     backgroundColor: "white",
     paddingHorizontal: 15,
     paddingVertical: 10,
     borderRadius: 10,
-    marginTop: 5,
-    borderColor: "#6e5143",
-    borderWidth: 1,
+    marginTop: 10,
   },
   buttonContainer: {
     width: "60%",
