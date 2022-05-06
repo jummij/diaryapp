@@ -35,6 +35,9 @@ export default function RegisterScreen({ navigation }) {
 
   return (
     <KeyboardAvoidingView style={styles.container} behavior="padding">
+      <View style={{ bottom: 50, width: "80%" }}>
+        <Text style={{ alignSelf: "flex-start", fontSize: 30 }}>Register</Text>
+      </View>
       <View style={styles.inputContainer}>
         <TextInput
           placeholder="Email"
@@ -66,7 +69,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     paddingTop: 10,
-    backgroundColor: "#c4a291",
+    backgroundColor: "#fcf0f3",
   },
   inputContainer: {
     width: "80%",
@@ -85,7 +88,7 @@ const styles = StyleSheet.create({
     marginTop: 40,
   },
   button: {
-    backgroundColor: "#6e5143",
+    backgroundColor: "#d64986",
     width: "100%",
     padding: 15,
     borderRadius: 10,
