@@ -6,6 +6,7 @@ import {
   TextInput,
   FlatList,
   TouchableOpacity,
+  SafeAreaView,
 } from "react-native";
 import { Button } from "react-native-elements";
 import styles from "./styles";
@@ -48,11 +49,11 @@ export default function AllPosts({ navigation }) {
   };
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <View style={{ backgroundColor: "white", height: 80 }}>
         <Text style={{ textAlign: "center", top: 50 }}> Entries </Text>
       </View>
-      <View style={{ margin: 10 }}>
+      <View style={{ margin: 10, height: "85%" }}>
         <TextInput
           placeholder="Search for..."
           onChangeText={(text) => setSearch(text)}
@@ -90,7 +91,7 @@ export default function AllPosts({ navigation }) {
                 style={{
                   backgroundColor: "white",
                   borderRadius: 5,
-                  padding: 15,
+                  padding: 20,
                   flexDirection: "row",
                 }}
               >
@@ -105,26 +106,13 @@ export default function AllPosts({ navigation }) {
                   </Text>
                   <Text style={{ fontSize: 10 }}>{item.date}</Text>
                 </View>
-                <Button
-                  icon={{
-                    name: "trash",
-                    type: "font-awesome",
-                    size: 23,
-                    color: "#d64986",
-                  }}
-                  containerStyle={{
-                    marginLeft: "auto",
-                  }}
-                  buttonStyle={{ backgroundColor: null }}
-                  onPress={() => deleteEntry(item)}
-                />
               </View>
             </TouchableOpacity>
           )}
           ItemSeparatorComponent={listSeparator}
-          inverted
+          // inverted
         />
       </View>
-    </View>
+    </SafeAreaView>
   );
 }
