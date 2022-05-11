@@ -19,16 +19,18 @@ Sovellukseen kirjaudutaan sähköpostitunnuksilla, jotka on rekisteröity sovell
 
 ### Sovelluksen sisällä
 
+**Satunnainen koirakuva ja viimeisin muistiinpano**
+
 Etusivulla näkyy viimeisin muistio sekä nappula, josta saa satunnaisen koiran kuvan (sovellus täytyy reloadata, jotta tulee toinen satunnainen koiran kuva).
 
 ![Etusivu](https://media0.giphy.com/media/bKKpGoyEUGIw4TwEzC/giphy.gif?cid=790b7611ad392d61ab89c17e3602123056a5d7d555b747bd&rid=giphy.gif&ct=g)
 
 
-
+**Uusi muistiinpano
 
 Etusivulla on + nappula, josta pääsee kirjoittamaan uutta muistiinpanoa. Alapalkista "Entries" on listattu kaikki olemassa olevat muistiot, joita pystyy painaa auki ja poistaa.
 
-![createAndDeleteEntry](https://media3.giphy.com/media/AzJCSinqWCbXDG4oZa/giphy.gif?cid=790b7611981db1d9e70a21617949f399cb98ada913f1f778&rid=giphy.gif&ct=g)
+![createAndDeleteEntry](https://media2.giphy.com/media/0NYrQ7vcPklcCGS7EH/giphy.gif?cid=790b7611f9b9f74ac4bbd9ac5441228687c369a4c107a3fb&rid=giphy.gif&ct=g)
 
 
 
