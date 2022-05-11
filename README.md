@@ -26,20 +26,22 @@ Etusivulla näkyy viimeisin muistio sekä nappula, josta saa satunnaisen koiran 
 ![Etusivu](https://media0.giphy.com/media/bKKpGoyEUGIw4TwEzC/giphy.gif?cid=790b7611ad392d61ab89c17e3602123056a5d7d555b747bd&rid=giphy.gif&ct=g)
 
 
-**Uusi muistiinpano
+**Uusi muistiinpano, muistiinpanon katsominen ja poistaminen**
 
 Etusivulla on + nappula, josta pääsee kirjoittamaan uutta muistiinpanoa. Alapalkista "Entries" on listattu kaikki olemassa olevat muistiot, joita pystyy painaa auki ja poistaa.
 
-![createAndDeleteEntry](https://media2.giphy.com/media/0NYrQ7vcPklcCGS7EH/giphy.gif?cid=790b7611f9b9f74ac4bbd9ac5441228687c369a4c107a3fb&rid=giphy.gif&ct=g)
+![createAndDeleteEntry](https://media3.giphy.com/media/tCOEwlKgS3sFKUaCWN/giphy.gif?cid=790b7611a53874c9171ded822e543d9c68e95f8005ca2d4e&rid=giphy.gif&ct=g)
 
 
+**Haku muistiinpanon otsikon mukaan**
 
 Jos sinulla on paljon muistiinpanoja, voit etsiä hakukentästä otsikon nimellä
 
 ![haku](https://media0.giphy.com/media/oQ6dyus5ObxF7LcDW4/giphy.gif?cid=790b761156e25f3144b1757daec29bc08e7cf08bb76f7d5d&rid=giphy.gif&ct=g)
 
 
+**Rekisteröinti**
 
 Rekisteröinnissä vaaditaan vain sähköposti ja salasana. Salasanan on oltava vähintään 6 merkkiä. Sovellus ei anna virheilmoituksia, jos syöttää olemassa olevan sähköpostitunnuksen tai virheellisen sähköpostimuodon.
 
-![rekisterointi](https://media3.giphy.com/media/tCOEwlKgS3sFKUaCWN/giphy.gif?cid=790b7611a53874c9171ded822e543d9c68e95f8005ca2d4e&rid=giphy.gif&ct=g)
+![rekisterointi](https://media4.giphy.com/media/EAVFk09cLcoOvXJuHz/giphy.gif?cid=790b761199171d0c17f5dd1e7befbe8463938c1a5b947207&rid=giphy.gif&ct=g)
