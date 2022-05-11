@@ -42,4 +42,4 @@ Jos sinulla on paljon muistiinpanoja, voit etsiä hakukentästä otsikon nimell�
 
 Rekisteröinnissä vaaditaan vain sähköposti ja salasana. Salasanan on oltava vähintään 6 merkkiä. Sovellus ei anna virheilmoituksia, jos syöttää olemassa olevan sähköpostitunnuksen tai virheellisen sähköpostimuodon.
 
-![rekisterointi](https://media4.giphy.com/media/EAVFk09cLcoOvXJuHz/giphy.gif?cid=790b761199171d0c17f5dd1e7befbe8463938c1a5b947207&rid=giphy.gif&ct=g)
+![rekisterointi](https://media3.giphy.com/media/tCOEwlKgS3sFKUaCWN/giphy.gif?cid=790b7611a53874c9171ded822e543d9c68e95f8005ca2d4e&rid=giphy.gif&ct=g)
