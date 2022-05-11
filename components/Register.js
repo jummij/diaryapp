@@ -20,9 +20,13 @@ export default function RegisterScreen({ navigation }) {
       .then((userCredential) => {
         // Signed in
         const user = userCredential.user;
-        navigation.navigate("Home");
+        alert("Account created successfully");
+        navigation.navigate("Login");
       })
       .catch((error) => {
+        if (password.length < 6) {
+          alert("Password must be at least 6 characters");
+        }
         const errorCode = error.code;
         const errorMessage = error.message;
         // ...
@@ -44,6 +48,7 @@ export default function RegisterScreen({ navigation }) {
           value={email}
           onChangeText={(text) => setEmail(text)}
           style={styles.input}
+          keyboardType="email-address"
         />
         <TextInput
           placeholder="Password"
