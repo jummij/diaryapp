@@ -1,25 +1,26 @@
-// tänne tulee view
-//jonka sisälle tulee view, joka tulostaa kaikki päiväkirjan postaukset?
-//Ja + nappi alaoikealle reunalle, josta pääsee NewPost komponenttiin
 import React, { useState, useEffect } from "react";
 import { db } from "../firebase";
 import {
   View,
   Text,
   ImageBackground,
-  TouchableOpacity,
   Image,
   Alert,
+  TouchableOpacity,
+  ScrollView,
 } from "react-native";
 import styles from "./styles";
 import bg from "../assets/bg.jpg";
-import { Button, Overlay } from "react-native-elements";
+import { Button, Overlay, Divider } from "react-native-elements";
 import { signOut } from "firebase/auth";
 import { auth } from "../firebase";
+import { ref, query, limitToLast, onValue } from "firebase/database";
 
 export default function Home({ navigation }) {
   const [dog, setDog] = useState([]);
   const [visible, setVisible] = useState(false);
+  const [latest, setLatest] = useState([]);
+  const [msg, setMsg] = useState("");
 
   var now = new Date();
   var days = [
@@ -44,8 +45,37 @@ export default function Home({ navigation }) {
       .catch((err) => Alert.alert("Error", "Something went wrong"));
   };
 
+  const latestEntry = async () => {
+    const entries = query(ref(db, auth.currentUser["uid"]), limitToLast(1));
+    onValue(entries, (snapshot) => {
+      snapshot.forEach((childSnapshot) => {
+        if (snapshot.exists()) {
+          const childKey = childSnapshot.key;
+          const childData = childSnapshot.val();
+          setLatest(childData);
+          setMsg("Check out your latest entry!");
+        } else {
+          setLatest([]);
+          setMsg("No entries yet :(");
+        }
+      });
+    });
+
+    /*onValue(entries, (snapshot) => {
+      if (snapshot.exists()) {
+        const data = snapshot.val();
+        setLatest(Object.values(data));
+        console.log(latest[0].title);
+      } else {
+        setLatest([]);
+        setMsg("No entries yet!");
+      }
+    }); */
+  };
+
   useEffect(() => {
     fetchDog();
+    latestEntry();
   }, []);
 
   const handleSignOut = () => {
@@ -107,6 +137,58 @@ export default function Home({ navigation }) {
               }}
             />
           </Overlay>
+
+          {latest ? (
+            <View style={{ height: "85%" }}>
+              <Text style={{ textAlign: "center", marginTop: 10 }}>{msg}</Text>
+              <View
+                style={{
+                  width: "90%",
+                  borderRadius: 10,
+                  backgroundColor: "#f5f0eb",
+                  alignSelf: "center",
+                  marginTop: 10,
+                  padding: 20,
+                  paddingBottom: 10,
+                  height: "80%",
+                }}
+              >
+                <Text style={{ fontSize: 15, marginBottom: 4 }}>
+                  {latest.title}
+                </Text>
+                <Text style={{ fontSize: 11, marginBottom: 10 }}>
+                  {latest.date}
+                </Text>
+                <Divider />
+                <View style={{ marginTop: 10 }}>
+                  {latest.image ? (
+                    <Image
+                      source={{ uri: latest.image }}
+                      style={{
+                        width: 90,
+                        height: 90,
+                        borderRadius: 180 / 2,
+                        alignSelf: "center",
+                      }}
+                    />
+                  ) : null}
+                </View>
+                <ScrollView>
+                  <Text
+                    style={{
+                      marginTop: 10,
+                      textAlign: "justify",
+                      fontSize: 13,
+                    }}
+                  >
+                    {latest.body}
+                  </Text>
+                </ScrollView>
+              </View>
+            </View>
+          ) : (
+            <Text style={{ textAlign: "center", marginTop: 10 }}>{msg}</Text> // ei toimi
+          )}
 
           <View style={styles.addButton}>
             <Button

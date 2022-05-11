@@ -49,6 +49,7 @@ export default function NewPost({ navigation }) {
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
   const [img, setImg] = useState(null);
+
   const date = dateTime;
 
   const save = () => {
@@ -76,7 +77,7 @@ export default function NewPost({ navigation }) {
       quality: 1,
     });
 
-    console.log(result);
+    //console.log(result);
 
     if (!result.cancelled) {
       setImg(result.uri);
@@ -172,59 +173,4 @@ export default function NewPost({ navigation }) {
       </ImageBackground>
     </View>
   );
-}
-
-{
-  /*
-   <View style={styles.container}>
-      <KeyboardAwareScrollView>
-        <ImageBackground
-          source={bg}
-          resizeMode="cover"
-          style={{ justifyContent: "center", flex: 1, width: "100%" }}
-        >
-          <View style={styles.newPostBox}>
-            <Text style={{ alignSelf: "flex-end", color: "#ccb8bf" }}>
-              {date}
-            </Text>
-            <Divider />
-            <TextInput
-              placeholder="Title"
-              style={styles.inputStyle}
-              onChangeText={(text) => setTitle(text)}
-              value={title}
-            />
-            <Divider style={{ marginTop: 10 }} />
-            <TextInput
-              placeholder="Write something..."
-              style={styles.inputStyleLong}
-              onChangeText={(text) => setBody(text)}
-              value={body}
-              multiline={true}
-              numberOfLines={5}
-            />
-            <View
-              style={{
-                alignItems: "center",
-                marginTop: 10,
-                position: "absolute",
-                bottom: 10,
-                alignSelf: "center",
-              }}
-            >
-              <Button
-                title="Save"
-                onPress={save}
-                buttonStyle={{
-                  width: 60,
-                  borderRadius: 10,
-                  backgroundColor: "#ffb8d4",
-                }}
-              />
-            </View>
-          </View>
-        </ImageBackground>
-      </KeyboardAwareScrollView>
-    </View>
-  */
 }
